@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-#######   training part    ############### 
+#######   Train    ############### 
 samples = np.loadtxt('generalsamples.data',np.float32)
 responses = np.loadtxt('generalresponses.data',np.float32)
 responses = responses.reshape((responses.size,1))
@@ -9,7 +9,7 @@ responses = responses.reshape((responses.size,1))
 model = cv2.KNearest()
 model.train(samples,responses)
 
-############################# testing part  #########################
+############################# Test  #########################
 
 im = cv2.imread('test_image1.jpg')
 out = np.zeros(im.shape,np.uint8)
